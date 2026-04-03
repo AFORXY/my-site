@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - 在线课程学习平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>EduLearn</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#courses">课程</a></li>
+                    <li><a href="#features">特色</a></li>
+                    <li><a href="#testimonials">评价</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline">登录</a>
+                    <a href="#" class="btn btn-primary">注册</a>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>探索知识的无限可能</h1>
+                <p>通过我们精心设计的在线课程，开启你的学习之旅，掌握未来所需的技能</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">浏览课程</a>
+                    <a href="#" class="btn btn-outline">了解更多</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=online%20learning%20platform%20with%20students%20studying%20on%20laptops%20in%20a%20modern%20classroom%20setting&image_size=landscape_16_9" alt="在线学习">
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程分类 -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门课程分类</h2>
+                <p>选择适合你的学习领域，开启专业技能提升之旅</p>
+            </div>
+            <div class="course-categories">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>编程开发</h3>
+                    <p>从基础到高级的编程技能，包括前端、后端、移动开发等</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>商业管理</h3>
+                    <p>提升你的商业洞察力和管理能力，包括市场营销、财务管理等</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-design"></i>
+                    </div>
+                    <h3>设计创意</h3>
+                    <p>培养你的设计思维和创意能力，包括UI/UX设计、平面设计等</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>语言学习</h3>
+                    <p>掌握全球通用语言，包括英语、日语、西班牙语等</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精选课程 -->
+    <section class="featured-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>精选课程</h2>
+                <p>由行业专家精心打造的优质课程</p>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=web%20development%20course%20with%20code%20on%20screen&image_size=square" alt="Web开发课程">
+                        <div class="course-badge">热门</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-category">编程开发</span>
+                            <span class="course-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                        </div>
+                        <h3>现代Web开发全栈工程师</h3>
+                        <p>从HTML/CSS基础到React、Node.js，全面掌握现代Web开发技能</p>
+                        <div class="course-footer">
+                            <span class="course-price">¥299</span>
+                            <a href="#" class="btn btn-sm btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=data%20science%20course%20with%20charts%20and%20graphs&image_size=square" alt="数据科学课程">
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-category">数据科学</span>
+                            <span class="course-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                        </div>
+                        <h3>Python数据分析与可视化</h3>
+                        <p>学习使用Python进行数据分析、处理和可视化，掌握数据驱动决策能力</p>
+                        <div class="course-footer">
+                            <span class="course-price">¥399</span>
+                            <a href="#" class="btn btn-sm btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ui%20ux%20design%20course%20with%20design%20tools&image_size=square" alt="UI/UX设计课程">
+                        <div class="course-badge">新课</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-category">设计创意</span>
+                            <span class="course-rating">
+                                <i class="fas fa-star"></i> 4.7
+                            </span>
+                        </div>
+                        <h3>UI/UX设计精修班</h3>
+                        <p>学习用户界面设计原则和用户体验设计方法，打造令人惊艳的数字产品</p>
+                        <div class="course-footer">
+                            <span class="course-price">¥249</span>
+                            <a href="#" class="btn btn-sm btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 平台特色 -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择我们</h2>
+                <p>我们提供高质量的学习体验和丰富的学习资源</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>专业讲师</h3>
+                    <p>由行业专家和资深教育者组成的讲师团队，提供专业、实用的知识</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>灵活学习</h3>
+                    <p>随时随地学习，根据自己的节奏和时间安排，实现高效学习</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>认证证书</h3>
+                    <p>完成课程后获得专业认证证书，提升个人竞争力和职业发展</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>互动学习</h3>
+                    <p>通过讨论、作业和项目实践，增强学习效果和知识应用能力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学生评价 -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>学生评价</h2>
+                <p>听听我们的学生怎么说</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"通过EduLearn的Web开发课程，我从零基础开始，现在已经能够独立开发网站了。课程内容丰富，讲师讲解清晰，非常推荐！"</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20male%20student%20portrait&image_size=square" alt="学生头像">
+                        <div class="author-info">
+                            <h4>李明</h4>
+                            <p>Web开发工程师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"UI/UX设计课程非常实用，老师会分享很多实际项目经验，让我对设计有了更深入的理解。课程作业也很有挑战性，帮助我快速提升技能。"</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20female%20student%20portrait&image_size=square" alt="学生头像">
+                        <div class="author-info">
+                            <h4>王芳</h4>
+                            <p>UI设计师</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Python数据分析课程内容全面，从基础到进阶都有覆盖。通过课程学习，我掌握了数据分析的核心技能，现在工作中能够更加高效地处理数据。"</p>
+                    <div class="testimonial-author">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20male%20data%20analyst%20portrait&image_size=square" alt="学生头像">
+                        <div class="author-info">
+                            <h4>张伟</h4>
+                            <p>数据分析师</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>联系我们</h2>
+                    <p>有任何问题或建议，欢迎随时联系我们</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>北京市海淀区中关村大街1号</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>400-123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@edulearn.com</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">消息</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>EduLearn</span>
+                    </a>
+                    <p>致力于提供高质量的在线教育资源，帮助每个人实现学习目标</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#courses">课程</a></li>
+                        <li><a href="#features">特色</a></li>
+                        <li><a href="#testimonials">评价</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>课程分类</h4>
+                    <ul>
+                        <li><a href="#">编程开发</a></li>
+                        <li><a href="#">商业管理</a></li>
+                        <li><a href="#">设计创意</a></li>
+                        <li><a href="#">语言学习</a></li>
+                        <li><a href="#">数据科学</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EduLearn. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
