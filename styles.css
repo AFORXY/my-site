@@ -203,6 +203,12 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.category-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .category-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
