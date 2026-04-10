@@ -617,6 +617,238 @@ footer {
     color: #adb5bd;
 }
 
+/* 课程详情页面样式 */
+.course-header {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.course-header-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-breadcrumb {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.course-breadcrumb a {
+    color: #4361ee;
+    text-decoration: none;
+}
+
+.course-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.course-info h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #212529;
+}
+
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.course-level {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.course-students {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.course-description {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.course-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.course-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.course-syllabus {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.syllabus-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.syllabus-section {
+    margin-bottom: 30px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.syllabus-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.syllabus-section-header:hover {
+    background-color: #e9ecef;
+}
+
+.syllabus-section-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #212529;
+    margin: 0;
+}
+
+.section-duration {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.syllabus-lessons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.syllabus-lessons li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #e9ecef;
+    transition: background-color 0.3s ease;
+}
+
+.syllabus-lessons li:hover {
+    background-color: #f8f9fa;
+}
+
+.lesson-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lesson-info i {
+    color: #4361ee;
+    font-size: 16px;
+}
+
+.lesson-info span {
+    font-size: 14px;
+    color: #212529;
+}
+
+.lesson-duration {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.course-features {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+}
+
+.course-testimonials {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.faq-section {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+}
+
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+.faq-question h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    margin: 0;
+}
+
+.faq-question i {
+    color: #4361ee;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    background-color: white;
+    padding: 0 20px 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
 /* 响应式设计 */
 @media (max-width: 992px) {
     .hero .container {
@@ -632,6 +864,20 @@ footer {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .course-header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .course-info h1 {
+        font-size: 28px;
+    }
+    
+    .course-actions {
+        justify-content: center;
     }
 }
 
