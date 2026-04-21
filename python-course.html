@@ -91,32 +91,168 @@
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code1-1')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>1.1 基础语法与控制流</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code1-1" class="lesson-code">
+                                <pre><code># 基础语法示例
+# 变量定义
+name = "王雯淇"
+major = "商务数据分析与应用"
+
+# 条件语句
+if major == "商务数据分析与应用":
+    print(f"{name}，欢迎学习Python数据分析！")
+else:
+    print("欢迎学习Python！")
+
+# 循环结构
+sales = [120, 150, 180, 210, 240]
+total = 0
+for sale in sales:
+    total += sale
+print(f"总销售额: {total}")
+
+# 列表推导式
+doubled_sales = [sale * 2 for sale in sales]
+print(f"双倍销售额: {doubled_sales}")</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code1-2')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>1.2 核心数据结构：列表与字典</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">40分钟</span>
+                            <div id="code1-2" class="lesson-code">
+                                <pre><code># 列表和字典示例
+# 列表 - 用于存储多个数据项
+products = ["商品A", "商品B", "商品C", "商品D"]
+prices = [199, 89, 299, 49]
+
+# 字典 - 用于存储键值对
+sales_data = {
+    "product": "商品A",
+    "price": 199,
+    "quantity": 15,
+    "category": "电子产品",
+    "sales_date": "2026-04-21"
+}
+
+# 访问字典值
+print(f"商品名称: {sales_data['product']}")
+print(f"销售数量: {sales_data['quantity']}")
+
+# 嵌套数据结构 - 列表中包含字典
+sales_records = [
+    {"product": "商品A", "price": 199, "quantity": 15},
+    {"product": "商品B", "price": 89, "quantity": 25},
+    {"product": "商品C", "price": 299, "quantity": 10}
+]
+
+# 遍历嵌套数据结构
+total_revenue = 0
+for record in sales_records:
+    revenue = record["price"] * record["quantity"]
+    total_revenue += revenue
+    print(f"{record['product']} 销售额: {revenue}")
+print(f"总销售额: {total_revenue}")</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code1-3')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>1.3 函数与模块调用</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">25分钟</span>
+                            <div id="code1-3" class="lesson-code">
+                                <pre><code># 函数与模块调用示例
+
+# 定义函数
+def calculate_revenue(price, quantity):
+    """计算销售 revenue"""
+    return price * quantity
+
+# 调用函数
+product_price = 199
+product_quantity = 15
+total_revenue = calculate_revenue(product_price, product_quantity)
+print(f"销售 revenue: {total_revenue}")
+
+# 带默认参数的函数
+def calculate_discount(price, discount_rate=0.1):
+    """计算折扣后价格"""
+    return price * (1 - discount_rate)
+
+# 调用带默认参数的函数
+original_price = 299
+discounted_price = calculate_discount(original_price)
+print(f"折扣后价格: {discounted_price}")
+
+# 导入模块
+import math
+
+# 使用模块中的函数
+sales_data = [120, 150, 180, 210, 240]
+mean_sales = sum(sales_data) / len(sales_data)
+std_deviation = math.sqrt(sum((x - mean_sales) ** 2 for x in sales_data) / len(sales_data))
+print(f"平均销售额: {mean_sales}")
+print(f"标准差: {std_deviation}")</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code1-4')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>1.4 文件操作与异常处理</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">25分钟</span>
+                            <div id="code1-4" class="lesson-code">
+                                <pre><code># 文件操作与异常处理示例
+
+# 写入数据到文件
+sales_data = [
+    {"product": "商品A", "price": 199, "quantity": 15},
+    {"product": "商品B", "price": 89, "quantity": 25},
+    {"product": "商品C", "price": 299, "quantity": 10}
+]
+
+try:
+    # 写入数据到CSV文件
+    with open("sales_data.csv", "w", encoding="utf-8") as f:
+        f.write("product,price,quantity\n")
+        for item in sales_data:
+            f.write(f"{item['product']},{item['price']},{item['quantity']}\n")
+    print("数据写入成功！")
+    
+    # 读取文件数据
+    with open("sales_data.csv", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    print("\n读取文件内容:")
+    for line in lines:
+        print(line.strip())
+        
+except FileNotFoundError:
+    print("文件不存在！")
+except Exception as e:
+    print(f"发生错误: {e}")
+
+# 异常处理示例
+try:
+    # 尝试除零操作
+    result = 10 / 0
+except ZeroDivisionError:
+    print("错误: 除数不能为零！")
+except Exception as e:
+    print(f"其他错误: {e}")
+finally:
+    print("无论是否发生错误，都会执行这里的代码")</code></pre>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -127,32 +263,242 @@
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code2-1')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>2.1 Pandas基础：DataFrame操作</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">60分钟</span>
+                            <div id="code2-1" class="lesson-code">
+                                <pre><code># Pandas DataFrame操作示例
+import pandas as pd
+
+# 创建DataFrame
+sales_data = {
+    "product": ["商品A", "商品B", "商品C", "商品D"],
+    "price": [199, 89, 299, 49],
+    "quantity": [15, 25, 10, 50],
+    "category": ["电子产品", "家居用品", "电子产品", "日用品"]
+}
+
+# 转换为DataFrame
+df = pd.DataFrame(sales_data)
+print("原始数据:")
+print(df)
+
+# 计算销售总额
+df["total"] = df["price"] * df["quantity"]
+print("\n添加销售总额列:")
+print(df)
+
+# 选择特定列
+product_info = df[["product", "price", "total"]]
+print("\n商品信息:")
+print(product_info)
+
+# 按类别分组
+category_group = df.groupby("category").sum()
+print("\n按类别分组:")
+print(category_group)
+
+# 排序
+ sorted_df = df.sort_values(by="total", ascending=False)
+print("\n按销售总额排序:")
+print(sorted_df)</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code2-2')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>2.2 数据清洗与预处理</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">45分钟</span>
+                            <div id="code2-2" class="lesson-code">
+                                <pre><code># 数据清洗与预处理示例
+import pandas as pd
+import numpy as np
+
+# 创建包含缺失值的数据集
+raw_data = {
+    "customer_id": [101, 102, 103, 104, 105, 106],
+    "age": [25, np.nan, 41, 28, 35, 22],
+    "gender": ["女", "男", "男", "女", np.nan, "女"],
+    "purchase_amount": [899, 1299, np.nan, 1999, 799, 599],
+    "purchase_frequency": [3, 5, 2, np.nan, 3, 4]
+}
+
+df = pd.DataFrame(raw_data)
+print("原始数据:")
+print(df)
+
+# 查看缺失值
+print("\n缺失值统计:")
+print(df.isnull().sum())
+
+# 填充缺失值
+df["age"] = df["age"].fillna(df["age"].mean())
+df["gender"] = df["gender"].fillna("未知")
+df["purchase_amount"] = df["purchase_amount"].fillna(df["purchase_amount"].median())
+df["purchase_frequency"] = df["purchase_frequency"].fillna(1)
+
+print("\n填充缺失值后:")
+print(df)
+
+# 数据类型转换
+df["age"] = df["age"].astype(int)
+df["purchase_frequency"] = df["purchase_frequency"].astype(int)
+
+print("\n数据类型转换后:")
+print(df.dtypes)
+
+# 移除重复数据（如果有）
+df = df.drop_duplicates()
+
+# 异常值处理
+df = df[df["purchase_amount"] < 3000]  # 移除购买金额异常值
+
+print("\n处理后的数据:")
+print(df)</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code2-3')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>2.3 数据聚合与分析</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code2-3" class="lesson-code">
+                                <pre><code># 数据聚合与分析示例
+import pandas as pd
+
+# 创建销售数据
+sales_data = {
+    "date": ["2026-04-01", "2026-04-01", "2026-04-02", "2026-04-02", "2026-04-03"],
+    "product": ["商品A", "商品B", "商品A", "商品C", "商品B"],
+    "category": ["电子产品", "家居用品", "电子产品", "电子产品", "家居用品"],
+    "price": [199, 89, 199, 299, 89],
+    "quantity": [15, 25, 10, 5, 20]
+}
+
+df = pd.DataFrame(sales_data)
+df["total"] = df["price"] * df["quantity"]
+
+print("原始销售数据:")
+print(df)
+
+# 按日期聚合
+print("\n按日期聚合:")
+daily_sales = df.groupby("date").agg({
+    "total": "sum",
+    "quantity": "sum",
+    "product": "nunique"
+}).rename(columns={"product": "product_count"})
+print(daily_sales)
+
+# 按类别聚合
+print("\n按类别聚合:")
+category_sales = df.groupby("category").agg({
+    "total": ["sum", "mean"],
+    "quantity": "sum"
+})
+print(category_sales)
+
+# 数据透视表
+print("\n数据透视表 (日期 x 类别):")
+pivot_table = pd.pivot_table(df, values="total", index="date", columns="category", aggfunc="sum", fill_value=0)
+print(pivot_table)
+
+# 计算统计指标
+print("\n销售统计:")
+print(f"总销售额: {df['total'].sum()}")
+print(f"平均销售额: {df['total'].mean()}")
+print(f"最高销售额: {df['total'].max()}")
+print(f"最低销售额: {df['total'].min()}")
+print(f"销售额标准差: {df['total'].std()}")</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code2-4')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>2.4 数据可视化：Matplotlib/Seaborn</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">45分钟</span>
+                            <div id="code2-4" class="lesson-code">
+                                <pre><code># 数据可视化示例
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+
+# 创建销售数据
+months = ["1月", "2月", "3月", "4月", "5月", "6月"]
+sales = [12000, 15000, 18000, 16000, 21000, 24000]
+
+# 1. 折线图 - 月度销售趋势
+plt.figure(figsize=(10, 6))
+plt.plot(months, sales, marker='o', linestyle='-', color='b', linewidth=2)
+plt.title('月度销售趋势', fontsize=14)
+plt.xlabel('月份', fontsize=12)
+plt.ylabel('销售额', fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig('sales_trend.png')
+plt.show()
+
+# 2. 柱状图 - 产品销售对比
+product_sales = {
+    "product": ["商品A", "商品B", "商品C", "商品D"],
+    "sales": [2985, 2225, 2990, 2450]
+}
+
+df = pd.DataFrame(product_sales)
+plt.figure(figsize=(10, 6))
+sns.barplot(x="product", y="sales", data=df, palette="viridis")
+plt.title('产品销售对比', fontsize=14)
+plt.xlabel('产品', fontsize=12)
+plt.ylabel('销售额', fontsize=12)
+plt.tight_layout()
+plt.savefig('product_sales.png')
+plt.show()
+
+# 3. 饼图 - 类别占比
+category_sales = {
+    "category": ["电子产品", "家居用品", "日用品"],
+    "sales": [5975, 2225, 2450]
+}
+
+df_category = pd.DataFrame(category_sales)
+plt.figure(figsize=(8, 8))
+plt.pie(df_category["sales"], labels=df_category["category"], autopct='%1.1f%%', startangle=90, colors=['#ff9999','#66b3ff','#99ff99'])
+plt.title('销售类别占比', fontsize=14)
+plt.axis('equal')  # 保证饼图是正圆形
+plt.tight_layout()
+plt.savefig('category_distribution.png')
+plt.show()
+
+# 4. 散点图 - 价格与销量关系
+price_quantity_data = {
+    "price": [199, 89, 299, 49, 159, 249, 129, 79],
+    "quantity": [15, 25, 10, 50, 20, 8, 22, 30]
+}
+
+df_scatter = pd.DataFrame(price_quantity_data)
+plt.figure(figsize=(10, 6))
+plt.scatter(df_scatter["price"], df_scatter["quantity"], s=100, alpha=0.7, color='green')
+plt.title('价格与销量关系', fontsize=14)
+plt.xlabel('价格', fontsize=12)
+plt.ylabel('销量', fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.savefig('price_quantity_relation.png')
+plt.show()</code></pre>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -163,25 +509,266 @@
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code3-1')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>3.1 大模型API调用</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">45分钟</span>
+                            <div id="code3-1" class="lesson-code">
+                                <pre><code># 大模型API调用示例
+import requests
+import json
+
+# 示例1: 调用OpenAI API进行情感分析
+def analyze_sentiment(text):
+    url = "https://api.openai.com/v1/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_API_KEY"  # 替换为你的API密钥
+    }
+    data = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": "你是一个情感分析专家，分析用户输入的文本情感，返回'积极'、'消极'或'中性'。"},
+            {"role": "user", "content": text}
+        ],
+        "max_tokens": 10
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        sentiment = result['choices'][0]['message']['content'].strip()
+        return sentiment
+    except Exception as e:
+        print(f"API调用失败: {e}")
+        return "无法分析"
+
+# 示例2: 调用文心一言API进行文本摘要
+def summarize_text(text):
+    url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions?access_token=YOUR_ACCESS_TOKEN"  # 替换为你的access_token
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = {
+        "messages": [
+            {"role": "user", "content": f"请对以下文本进行摘要，控制在100字以内：{text}"}
+        ]
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        summary = result['result']
+        return summary
+    except Exception as e:
+        print(f"API调用失败: {e}")
+        return "无法摘要"
+
+# 测试情感分析
+test_reviews = [
+    "这个产品非常好用，质量很好，物流也很快，非常满意！",
+    "这个产品质量很差，用了没几天就坏了，非常失望。",
+    "这个产品一般般，没有特别的优点，也没有特别的缺点。"
+]
+
+print("情感分析结果:")
+for review in test_reviews:
+    sentiment = analyze_sentiment(review)
+    print(f"评论: {review}")
+    print(f"情感: {sentiment}")
+    print()
+
+# 测试文本摘要
+test_text = "Python是一种广泛使用的高级编程语言，由Guido van Rossum创建于1980年代末。它以简洁的语法和强大的库生态系统而闻名，被广泛应用于Web开发、数据科学、人工智能等领域。Python的设计哲学强调代码的可读性和简洁性，使其成为初学者和专业开发者的首选语言之一。"
+
+print("文本摘要结果:")
+summary = summarize_text(test_text)
+print(f"原文: {test_text}")
+print(f"摘要: {summary}")</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code3-2')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>3.2 LangChain框架初步</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">45分钟</span>
+                            <div id="code3-2" class="lesson-code">
+                                <pre><code># LangChain框架初步示例
+from langchain.llms import OpenAI
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.document_loaders import TextLoader
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.chains import RetrievalQA
+
+# 示例1: 基本LLMChain使用
+llm = OpenAI(api_key="YOUR_API_KEY")  # 替换为你的API密钥
+
+# 创建prompt模板
+prompt = PromptTemplate(
+    input_variables=["topic"],
+    template="请生成关于{topic}的3个关键点，每个点不超过50字。"
+)
+
+# 创建LLMChain
+chain = LLMChain(llm=llm, prompt=prompt)
+
+# 运行chain
+topic = "Python数据分析"
+result = chain.run(topic)
+print(f"关于{topic}的关键点:")
+print(result)
+print()
+
+# 示例2: 基于文档的问答系统
+# 1. 加载文档
+loader = TextLoader("business_report.txt")  # 替换为你的文档路径
+documents = loader.load()
+
+# 2. 分割文档
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+texts = text_splitter.split_documents(documents)
+
+# 3. 创建向量存储
+embeddings = OpenAIEmbeddings(api_key="YOUR_API_KEY")  # 替换为你的API密钥
+vectorstore = Chroma.from_documents(texts, embeddings)
+
+# 4. 创建检索QA链
+qa = RetrievalQA.from_chain_type(
+    llm=llm,
+    chain_type="stuff",
+    retriever=vectorstore.as_retriever()
+)
+
+# 5. 进行问答
+query = "2025年公司的销售目标是什么？"
+result = qa.run(query)
+print(f"问题: {query}")
+print(f"回答: {result}")
+print()
+
+# 示例3: 组合多个链
+# 创建产品描述生成链
+product_prompt = PromptTemplate(
+    input_variables=["product_name", "features"],
+    template="请为{product_name}生成一个吸引人的产品描述，突出以下特点：{features}。"
+)
+product_chain = LLMChain(llm=llm, prompt=product_prompt)
+
+# 运行产品描述生成
+product_name = "智能手表"
+features = "健康监测、运动追踪、智能通知、长续航"
+product_description = product_chain.run(product_name=product_name, features=features)
+print(f"{product_name}的产品描述:")
+print(product_description)</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code3-3')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>3.3 Prompt驱动的代码修改</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code3-3" class="lesson-code">
+                                <pre><code># Prompt驱动的代码修改示例
+import requests
+import json
+
+# 函数：使用AI修改代码
+def modify_code_with_ai(original_code, instructions):
+    url = "https://api.openai.com/v1/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_API_KEY"  # 替换为你的API密钥
+    }
+    data = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": "你是一个Python代码专家，根据用户的指令修改代码。只返回修改后的代码，不要添加任何解释。"},
+            {"role": "user", "content": f"原始代码：\n{original_code}\n\n修改指令：{instructions}"}
+        ],
+        "max_tokens": 1000
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        modified_code = result['choices'][0]['message']['content']
+        return modified_code
+    except Exception as e:
+        print(f"API调用失败: {e}")
+        return original_code
+
+# 示例1: 优化代码性能
+original_code = """
+def calculate_total_sales(sales_data):
+    total = 0
+    for item in sales_data:
+        total += item['price'] * item['quantity']
+    return total
+
+# 测试数据
+sales = [
+    {'price': 199, 'quantity': 15},
+    {'price': 89, 'quantity': 25},
+    {'price': 299, 'quantity': 10},
+    {'price': 49, 'quantity': 50}
+]
+
+result = calculate_total_sales(sales)
+print(f"总销售额: {result}")
+"""
+
+instructions = "使用列表推导式或生成器表达式优化代码，提高执行效率"
+modified_code = modify_code_with_ai(original_code, instructions)
+print("优化后的代码:")
+print(modified_code)
+print()
+
+# 示例2: 添加错误处理
+original_code = """
+def divide_numbers(a, b):
+    return a / b
+
+# 测试
+a = 10
+b = 0
+result = divide_numbers(a, b)
+print(f"结果: {result}")
+"""
+
+instructions = "添加异常处理，防止除零错误，并返回友好的错误信息"
+modified_code = modify_code_with_ai(original_code, instructions)
+print("添加错误处理后的代码:")
+print(modified_code)
+print()
+
+# 示例3: 改进代码可读性
+original_code = """
+def f(x,y):
+    if x>y:
+        return x*2
+    else:
+        return y+1
+
+print(f(5,3))
+"""
+
+instructions = "改进代码可读性，添加适当的注释，使用更有意义的函数名和变量名"
+modified_code = modify_code_with_ai(original_code, instructions)
+print("改进可读性后的代码:")
+print(modified_code)</code></pre>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -192,25 +779,301 @@
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code4-1')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>4.1 案例优先，实践为王</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code4-1" class="lesson-code">
+                                <pre><code># 案例优先学习法示例 - 电商销售数据分析
+import pandas as pd
+
+# 案例：分析电商平台销售数据并找出销量Top10
+
+# 1. 读取销售数据
+def load_sales_data():
+    # 模拟销售数据
+    data = {
+        "product_id": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112],
+        "product_name": ["智能手机A", "笔记本电脑B", "智能手表C", "无线耳机D", "平板电脑E",
+                        "智能音箱F", "运动手环G", "数码相机H", "游戏手柄I", "无线充电器J",
+                        "蓝牙音箱K", "智能灯泡L"],
+        "category": ["电子产品", "电子产品", "可穿戴设备", "音频设备", "电子产品",
+                    "智能家居", "可穿戴设备", "摄影器材", "游戏设备", "手机配件",
+                    "音频设备", "智能家居"],
+        "price": [4999, 5999, 1299, 899, 2999, 399, 199, 3499, 499, 199, 299, 99],
+        "quantity": [150, 80, 200, 300, 120, 250, 400, 60, 180, 350, 220, 450],
+        "sales_date": ["2026-04-01", "2026-04-01", "2026-04-02", "2026-04-02", "2026-04-03",
+                      "2026-04-03", "2026-04-04", "2026-04-04", "2026-04-05", "2026-04-05",
+                      "2026-04-06", "2026-04-06"]
+    }
+    return pd.DataFrame(data)
+
+# 2. 计算销售额
+def calculate_sales(df):
+    df["total_sales"] = df["price"] * df["quantity"]
+    return df
+
+# 3. 找出销量Top10
+def find_top_10_products(df):
+    top_10 = df.sort_values(by="quantity", ascending=False).head(10)
+    return top_10
+
+# 4. 分析类别销售情况
+def analyze_category_sales(df):
+    category_sales = df.groupby("category").agg({
+        "quantity": "sum",
+        "total_sales": "sum"
+    }).sort_values(by="total_sales", ascending=False)
+    return category_sales
+
+# 主函数
+def main():
+    # 加载数据
+    sales_df = load_sales_data()
+    
+    # 计算销售额
+    sales_df = calculate_sales(sales_df)
+    
+    # 找出销量Top10
+    top_10_products = find_top_10_products(sales_df)
+    print("销量Top10产品:")
+    print(top_10_products[["product_name", "quantity", "total_sales"]])
+    print()
+    
+    # 分析类别销售情况
+    category_analysis = analyze_category_sales(sales_df)
+    print("类别销售分析:")
+    print(category_analysis)
+
+if __name__ == "__main__":
+    main()
+
+# 学习要点：
+# 1. 通过实际案例学习数据处理和分析
+# 2. 掌握Pandas的核心操作：排序、分组、聚合
+# 3. 了解数据分析的基本流程：数据加载→数据处理→分析→结果展示
+# 4. 从解决实际问题中学习语法和库的使用
+</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code4-2')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>4.2 利用可视化工具破除玄学</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code4-2" class="lesson-code">
+                                <pre><code># 利用可视化工具理解代码执行过程
+
+# 示例1: 字典的嵌套循环可视化
+# 在pythontutor.com上运行以下代码可以看到内存中数据的变化
+def process_customer_data(customers):
+    """处理客户数据，计算每个客户的总购买金额"""
+    customer_totals = {}
+    
+    for customer_id, purchases in customers.items():
+        total = 0
+        for purchase in purchases:
+            total += purchase["amount"]
+        customer_totals[customer_id] = total
+    
+    return customer_totals
+
+# 测试数据
+customer_data = {
+    "C001": [
+        {"item": "商品A", "amount": 199},
+        {"item": "商品B", "amount": 89},
+        {"item": "商品C", "amount": 299}
+    ],
+    "C002": [
+        {"item": "商品D", "amount": 49},
+        {"item": "商品E", "amount": 159}
+    ],
+    "C003": [
+        {"item": "商品F", "amount": 399},
+        {"item": "商品G", "amount": 249},
+        {"item": "商品H", "amount": 129}
+    ]
+}
+
+# 调用函数
+result = process_customer_data(customer_data)
+print("客户总购买金额:")
+print(result)
+
+# 示例2: 列表推导式的执行过程
+# 在pythontutor.com上运行可以看到列表推导式的执行步骤
+
+sales = [120, 150, 180, 210, 240]
+
+# 传统循环
+doubled_sales = []
+for sale in sales:
+    doubled_sales.append(sale * 2)
+print("传统循环结果:", doubled_sales)
+
+# 列表推导式
+doubled_sales_comp = [sale * 2 for sale in sales]
+print("列表推导式结果:", doubled_sales_comp)
+
+# 带条件的列表推导式
+high_sales = [sale for sale in sales if sale > 180]
+print("高于180的销售额:", high_sales)
+
+# 学习要点：
+# 1. 使用pythontutor.com可视化代码执行过程
+# 2. 理解循环和列表推导式的执行机制
+# 3. 观察变量在内存中的变化
+# 4. 对比不同实现方式的执行效率
+
+# 推荐的可视化工具：
+# 1. Python Tutor: https://pythontutor.com/
+# 2. Visual Studio Code的Debug模式
+# 3. PyCharm的Debug模式
+# 4. Jupyter Notebook的交互式执行
+</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code4-3')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>4.3 目标除障法：快速定位和解决Bug</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">30分钟</span>
+                            <div id="code4-3" class="lesson-code">
+                                <pre><code># 目标除障法 - 快速定位和解决Bug
+
+# 示例：有Bug的代码
+def calculate_average_sales(sales_data):
+    """计算平均销售额"""
+    total = 0
+    count = 0
+    
+    for item in sales_data:
+        # 问题1: 没有检查数据类型
+        total += item["sales"]
+        count += 1
+    
+    # 问题2: 没有处理除零错误
+    average = total / count
+    return average
+
+# 测试数据 - 包含异常数据
+test_data = [
+    {"product": "商品A", "sales": 1000},
+    {"product": "商品B", "sales": 1500},
+    {"product": "商品C", "sales": "2000"},  # 字符串类型
+    {"product": "商品D", "sales": 2500}
+]
+
+# 目标除障法步骤：
+
+# 步骤1: 观察错误信息
+try:
+    result = calculate_average_sales(test_data)
+    print(f"平均销售额: {result}")
+except Exception as e:
+    print(f"错误信息: {e}")
+
+# 步骤2: 缩小范围，定位问题
+print("\n步骤2: 缩小范围定位问题")
+
+def debug_calculate_average_sales(sales_data):
+    """调试版本"""
+    total = 0
+    count = 0
+    
+    for i, item in enumerate(sales_data):
+        print(f"处理第{i+1}个数据: {item}")
+        try:
+            # 检查数据类型
+            sales_value = item["sales"]
+            if not isinstance(sales_value, (int, float)):
+                print(f"警告: 第{i+1}个数据的sales不是数字类型: {sales_value}")
+                # 尝试转换
+                sales_value = float(sales_value)
+            total += sales_value
+            count += 1
+            print(f"当前total: {total}, count: {count}")
+        except Exception as e:
+            print(f"处理第{i+1}个数据时出错: {e}")
+    
+    # 处理除零错误
+    if count == 0:
+        print("警告: 没有有效数据")
+        return 0
+    
+    average = total / count
+    return average
+
+# 测试调试版本
+result = debug_calculate_average_sales(test_data)
+print(f"平均销售额: {result}")
+
+# 步骤3: 修复Bug
+print("\n步骤3: 修复Bug")
+
+def fixed_calculate_average_sales(sales_data):
+    """修复版本"""
+    total = 0
+    count = 0
+    
+    for item in sales_data:
+        try:
+            # 检查并转换数据类型
+            sales_value = item["sales"]
+            if not isinstance(sales_value, (int, float)):
+                sales_value = float(sales_value)
+            total += sales_value
+            count += 1
+        except (ValueError, TypeError) as e:
+            # 跳过无效数据
+            print(f"跳过无效数据: {item}, 错误: {e}")
+            continue
+    
+    # 处理除零错误
+    if count == 0:
+        return 0
+    
+    average = total / count
+    return average
+
+# 测试修复版本
+result = fixed_calculate_average_sales(test_data)
+print(f"平均销售额: {result}")
+
+# 步骤4: 验证修复结果
+print("\n步骤4: 验证修复结果")
+
+# 测试正常数据
+normal_data = [
+    {"product": "商品A", "sales": 1000},
+    {"product": "商品B", "sales": 1500},
+    {"product": "商品C", "sales": 2000},
+    {"product": "商品D", "sales": 2500}
+]
+
+result_normal = fixed_calculate_average_sales(normal_data)
+print(f"正常数据的平均销售额: {result_normal}")
+
+# 测试空数据
+empty_data = []
+result_empty = fixed_calculate_average_sales(empty_data)
+print(f"空数据的平均销售额: {result_empty}")
+
+# 学习要点：
+# 1. 观察错误信息，了解问题类型
+# 2. 缩小范围，定位具体问题位置
+# 3. 分析问题原因，提出解决方案
+# 4. 测试修复结果，确保问题解决
+# 5. 考虑边界情况，提高代码健壮性
+</code></pre>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -221,25 +1084,598 @@
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code5-1')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>5.1 电商销售数据分析</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">60分钟</span>
+                            <div id="code5-1" class="lesson-code">
+                                <pre><code># 电商销售数据分析实战项目
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 1. 加载销售数据
+def load_sales_data():
+    """加载销售数据"""
+    data = {
+        "order_id": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
+        "customer_id": [101, 102, 103, 101, 104, 102, 105, 103, 106, 104],
+        "product_id": [201, 202, 203, 202, 204, 201, 205, 203, 204, 202],
+        "product_name": ["智能手机", "笔记本电脑", "智能手表", "笔记本电脑", "无线耳机",
+                        "智能手机", "平板电脑", "智能手表", "无线耳机", "笔记本电脑"],
+        "category": ["电子产品", "电子产品", "可穿戴设备", "电子产品", "音频设备",
+                    "电子产品", "电子产品", "可穿戴设备", "音频设备", "电子产品"],
+        "price": [4999, 5999, 1299, 5999, 899, 4999, 2999, 1299, 899, 5999],
+        "quantity": [1, 1, 2, 1, 3, 2, 1, 1, 2, 1],
+        "order_date": ["2026-04-01", "2026-04-01", "2026-04-02", "2026-04-02", "2026-04-03",
+                      "2026-04-03", "2026-04-04", "2026-04-04", "2026-04-05", "2026-04-05"],
+        "payment_method": ["支付宝", "微信支付", "支付宝", "微信支付", "支付宝",
+                          "微信支付", "支付宝", "微信支付", "支付宝", "微信支付"]
+    }
+    df = pd.DataFrame(data)
+    df["total_amount"] = df["price"] * df["quantity"]
+    return df
+
+# 2. 数据清洗与预处理
+def preprocess_data(df):
+    """数据预处理"""
+    # 转换日期格式
+    df["order_date"] = pd.to_datetime(df["order_date"])
+    # 提取月份和星期
+    df["month"] = df["order_date"].dt.month
+    df["day_of_week"] = df["order_date"].dt.dayofweek
+    return df
+
+# 3. 销售分析
+def analyze_sales(df):
+    """销售数据分析"""
+    print("=== 销售数据分析 ===")
+    
+    # 总销售额
+    total_sales = df["total_amount"].sum()
+    print(f"总销售额: ¥{total_sales}")
+    
+    # 平均订单金额
+    avg_order_value = df["total_amount"].mean()
+    print(f"平均订单金额: ¥{avg_order_value:.2f}")
+    
+    # 销售趋势
+    daily_sales = df.groupby("order_date")["total_amount"].sum()
+    print("\n每日销售额:")
+    print(daily_sales)
+    
+    # 产品销售排行
+    product_sales = df.groupby("product_name")["total_amount"].sum().sort_values(ascending=False)
+    print("\n产品销售排行:")
+    print(product_sales)
+    
+    # 类别销售分布
+    category_sales = df.groupby("category")["total_amount"].sum()
+    print("\n类别销售分布:")
+    print(category_sales)
+    
+    # 支付方式分布
+    payment_distribution = df.groupby("payment_method").size()
+    print("\n支付方式分布:")
+    print(payment_distribution)
+    
+    return daily_sales, product_sales, category_sales, payment_distribution
+
+# 4. 数据可视化
+def visualize_data(daily_sales, product_sales, category_sales, payment_distribution):
+    """数据可视化"""
+    # 1. 每日销售趋势
+    plt.figure(figsize=(10, 6))
+    daily_sales.plot(kind="line", marker="o")
+    plt.title("每日销售趋势")
+    plt.xlabel("日期")
+    plt.ylabel("销售额")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig("daily_sales_trend.png")
+    
+    # 2. 产品销售排行
+    plt.figure(figsize=(10, 6))
+    product_sales.plot(kind="bar")
+    plt.title("产品销售排行")
+    plt.xlabel("产品")
+    plt.ylabel("销售额")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig("product_sales_ranking.png")
+    
+    # 3. 类别销售分布
+    plt.figure(figsize=(8, 8))
+    category_sales.plot(kind="pie", autopct="%1.1f%%")
+    plt.title("类别销售分布")
+    plt.axis("equal")
+    plt.tight_layout()
+    plt.savefig("category_sales_distribution.png")
+    
+    # 4. 支付方式分布
+    plt.figure(figsize=(8, 6))
+    payment_distribution.plot(kind="bar")
+    plt.title("支付方式分布")
+    plt.xlabel("支付方式")
+    plt.ylabel("订单数")
+    plt.tight_layout()
+    plt.savefig("payment_method_distribution.png")
+    
+    print("\n数据可视化完成，图表已保存到本地。")
+
+# 5. 客户价值分析
+def analyze_customer_value(df):
+    """客户价值分析"""
+    print("\n=== 客户价值分析 ===")
+    
+    # 计算每个客户的总购买金额和订单数
+    customer_value = df.groupby("customer_id").agg({
+        "total_amount": "sum",
+        "order_id": "nunique"
+    }).rename(columns={"total_amount": "total_spent", "order_id": "order_count"})
+    
+    # 计算客户平均订单金额
+    customer_value["avg_order_value"] = customer_value["total_spent"] / customer_value["order_count"]
+    
+    print("客户价值分析:")
+    print(customer_value.sort_values(by="total_spent", ascending=False))
+    
+    return customer_value
+
+# 主函数
+def main():
+    # 加载数据
+    sales_df = load_sales_data()
+    
+    # 数据预处理
+    sales_df = preprocess_data(sales_df)
+    
+    # 销售分析
+    daily_sales, product_sales, category_sales, payment_distribution = analyze_sales(sales_df)
+    
+    # 数据可视化
+    visualize_data(daily_sales, product_sales, category_sales, payment_distribution)
+    
+    # 客户价值分析
+    customer_value = analyze_customer_value(sales_df)
+
+if __name__ == "__main__":
+    main()
+
+# 项目学习要点：
+# 1. 完整的数据分析流程：数据加载→预处理→分析→可视化
+# 2. 掌握Pandas的核心数据处理功能
+# 3. 使用Matplotlib和Seaborn进行数据可视化
+# 4. 理解电商销售数据的关键指标
+# 5. 学习如何从数据中提取有价值的商业洞察
+</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code5-2')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>5.2 客户行为分析与 segmentation</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">60分钟</span>
+                            <div id="code5-2" class="lesson-code">
+                                <pre><code># 客户行为分析与分群实战项目
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 1. 加载客户数据
+def load_customer_data():
+    """加载客户数据"""
+    data = {
+        "customer_id": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115],
+        "age": [25, 32, 41, 28, 35, 45, 22, 38, 50, 29, 33, 42, 26, 36, 48],
+        "gender": ["女", "男", "男", "女", "女", "男", "女", "男", "男", "女", "女", "男", "女", "男", "男"],
+        "annual_income": [50000, 80000, 120000, 60000, 90000, 150000, 40000, 100000, 180000, 70000, 85000, 130000, 55000, 95000, 160000],
+        "spending_score": [60, 75, 85, 50, 70, 90, 40, 80, 95, 55, 65, 85, 45, 75, 90],
+        "purchase_frequency": [12, 18, 25, 10, 15, 20, 8, 16, 22, 11, 14, 19, 9, 17, 21],
+        "avg_order_value": [1200, 1500, 2000, 900, 1300, 2200, 800, 1600, 2500, 1000, 1400, 1800, 950, 1550, 2100]
+    }
+    return pd.DataFrame(data)
+
+# 2. 数据预处理
+def preprocess_data(df):
+    """数据预处理"""
+    # 选择用于聚类的特征
+    features = df[["annual_income", "spending_score", "purchase_frequency", "avg_order_value"]]
+    
+    # 标准化数据
+    scaler = StandardScaler()
+    scaled_features = scaler.fit_transform(features)
+    
+    return df, scaled_features
+
+# 3. 客户分群（K-means聚类）
+def perform_clustering(df, scaled_features, n_clusters=4):
+    """执行K-means聚类"""
+    # 构建K-means模型
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+    cluster_labels = kmeans.fit_predict(scaled_features)
+    
+    # 将聚类结果添加到原数据
+    df["cluster"] = cluster_labels
+    
+    return df, kmeans
+
+# 4. 分析客户分群结果
+def analyze_clusters(df):
+    """分析客户分群结果"""
+    print("=== 客户分群分析 ===")
+    
+    # 统计每个集群的客户数量
+    cluster_counts = df["cluster"].value_counts().sort_index()
+    print("\n各集群客户数量:")
+    print(cluster_counts)
+    
+    # 分析每个集群的特征
+    cluster_profile = df.groupby("cluster").agg({
+        "age": "mean",
+        "annual_income": "mean",
+        "spending_score": "mean",
+        "purchase_frequency": "mean",
+        "avg_order_value": "mean"
+    }).round(2)
+    
+    print("\n各集群特征概览:")
+    print(cluster_profile)
+    
+    # 为每个集群命名
+    cluster_names = {
+        0: "高价值客户",
+        1: "中等价值客户",
+        2: "低价值客户",
+        3: "潜在价值客户"
+    }
+    
+    df["cluster_name"] = df["cluster"].map(cluster_names)
+    print("\n集群命名:")
+    print(df[["customer_id", "cluster", "cluster_name"]].head())
+    
+    return df, cluster_profile
+
+# 5. 数据可视化
+def visualize_clusters(df, cluster_profile):
+    """可视化客户分群结果"""
+    # 1. 收入 vs 消费评分散点图
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x="annual_income", y="spending_score", hue="cluster_name", data=df, palette="viridis", s=100)
+    plt.title("客户分群：收入 vs 消费评分")
+    plt.xlabel("年收入")
+    plt.ylabel("消费评分")
+    plt.tight_layout()
+    plt.savefig("customer_clusters_scatter.png")
+    
+    # 2. 各集群特征雷达图
+    features = ["age", "annual_income", "spending_score", "purchase_frequency", "avg_order_value"]
+    
+    plt.figure(figsize=(12, 10))
+    for i, cluster in enumerate(cluster_profile.index):
+        plt.subplot(2, 2, i+1)
+        values = cluster_profile.loc[cluster, features].values
+        # 标准化为0-100范围
+        normalized_values = (values - values.min()) / (values.max() - values.min()) * 100
+        angles = np.linspace(0, 2*np.pi, len(features), endpoint=False).tolist()
+        normalized_values = np.concatenate((normalized_values, [normalized_values[0]]))
+        angles += angles[:1]
+        
+        plt.polar(angles, normalized_values, 'o-', linewidth=2)
+        plt.fill(angles, normalized_values, alpha=0.25)
+        plt.thetagrids(np.degrees(angles[:-1]), features)
+        plt.title(f"集群 {cluster}: {df[df['cluster'] == cluster]['cluster_name'].iloc[0]}")
+    
+    plt.tight_layout()
+    plt.savefig("cluster_profiles_radar.png")
+    
+    # 3. 各集群客户数量饼图
+    plt.figure(figsize=(8, 8))
+    cluster_counts = df["cluster_name"].value_counts()
+    plt.pie(cluster_counts, labels=cluster_counts.index, autopct="%1.1f%%", startangle=90)
+    plt.title("客户分群分布")
+    plt.axis("equal")
+    plt.tight_layout()
+    plt.savefig("cluster_distribution.png")
+    
+    print("\n数据可视化完成，图表已保存到本地。")
+
+# 6. 制定营销策略
+def generate_marketing_strategy(df):
+    """基于客户分群制定营销策略"""
+    print("\n=== 营销策略建议 ===")
+    
+    strategies = {
+        "高价值客户": "\n".join([
+            "- 提供专属VIP服务和个性化推荐",
+            "- 定期发送高端产品信息和独家优惠",
+            "- 邀请参加VIP活动和新品发布会",
+            "- 建立专属客户关系管理，提高忠诚度"
+        ]),
+        "中等价值客户": "\n".join([
+            "- 提供阶梯式会员福利，鼓励增加消费",
+            "- 定期推送个性化促销信息",
+            "- 开展交叉销售和向上销售活动",
+            "- 提供会员积分和返现活动"
+        ]),
+        "低价值客户": "\n".join([
+            "- 提供入门级产品和优惠，吸引首次购买",
+            "- 发送新手礼包和首次购买折扣",
+            "- 开展社交媒体互动活动，提高品牌认知",
+            "- 简化购买流程，降低购买门槛"
+        ]),
+        "潜在价值客户": "\n".join([
+            "- 分析购买行为，预测潜在需求",
+            "- 提供个性化产品推荐",
+            "- 开展会员成长计划，鼓励消费升级",
+            "- 定期发送相关产品信息和教育内容"
+        ])
+    }
+    
+    for cluster_name, strategy in strategies.items():
+        print(f"\n{cluster_name} 营销策略:")
+        print(strategy)
+
+# 主函数
+def main():
+    # 加载数据
+    customer_df = load_customer_data()
+    
+    # 数据预处理
+    customer_df, scaled_features = preprocess_data(customer_df)
+    
+    # 客户分群
+    customer_df, kmeans = perform_clustering(customer_df, scaled_features)
+    
+    # 分析分群结果
+    customer_df, cluster_profile = analyze_clusters(customer_df)
+    
+    # 数据可视化
+    visualize_clusters(customer_df, cluster_profile)
+    
+    # 制定营销策略
+    generate_marketing_strategy(customer_df)
+
+if __name__ == "__main__":
+    main()
+
+# 项目学习要点：
+# 1. 掌握客户分群的基本方法（K-means聚类）
+# 2. 学习如何分析客户行为数据
+# 3. 理解不同客户群体的特征和价值
+# 4. 基于客户分群制定个性化营销策略
+# 5. 学习使用Scikit-learn进行机器学习分析
+</code></pre>
+                            </div>
                         </li>
                         <li>
-                            <div class="lesson-info">
+                            <div class="lesson-info" onclick="toggleCode('code5-3')">
                                 <i class="fas fa-play-circle"></i>
                                 <span>5.3 AI辅助的商业报告生成</span>
+                                <i class="fas fa-chevron-down code-toggle"></i>
                             </div>
                             <span class="lesson-duration">60分钟</span>
+                            <div id="code5-3" class="lesson-code">
+                                <pre><code># AI辅助的商业报告生成实战项目
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import requests
+import json
+from datetime import datetime
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+# 1. 加载销售数据
+def load_sales_data():
+    """加载销售数据"""
+    data = {
+        "date": pd.date_range(start="2026-01-01", end="2026-03-31", freq="D"),
+        "sales": [12000, 15000, 18000, 16000, 21000, 24000, 19000, 17000, 22000, 25000, 28000, 23000, 20000, 18000, 21000, 24000, 27000, 25000, 22000, 20000, 23000, 26000, 29000, 27000, 24000, 22000, 25000, 28000, 31000, 29000, 26000, 24000, 27000, 30000, 33000, 31000, 28000, 26000, 29000, 32000, 35000, 33000, 30000, 28000, 31000, 34000, 37000, 35000, 32000, 30000, 33000, 36000, 39000, 37000, 34000, 32000, 35000, 38000, 41000, 39000, 36000, 34000, 37000, 40000, 43000, 41000, 38000, 36000, 39000, 42000, 45000, 43000, 40000, 38000, 41000, 44000, 47000, 45000, 42000, 40000, 43000, 46000, 49000, 47000, 44000, 42000]
+    }
+    df = pd.DataFrame(data)
+    # 提取月份
+    df["month"] = df["date"].dt.month
+    return df
+
+# 2. 数据预处理和分析
+def analyze_sales_data(df):
+    """分析销售数据"""
+    print("=== 销售数据分析 ===")
+    
+    # 计算月度销售额
+    monthly_sales = df.groupby("month")["sales"].sum()
+    print("\n月度销售额:")
+    print(monthly_sales)
+    
+    # 计算日均销售额
+    daily_avg = df["sales"].mean()
+    print(f"\n日均销售额: ¥{daily_avg:.2f}")
+    
+    # 计算销售趋势
+    df["rolling_avg"] = df["sales"].rolling(window=7).mean()
+    
+    # 计算月度增长率
+    monthly_growth = monthly_sales.pct_change() * 100
+    print("\n月度增长率:")
+    print(monthly_growth)
+    
+    return df, monthly_sales, daily_avg, monthly_growth
+
+# 3. 数据可视化
+def visualize_sales_data(df, monthly_sales, monthly_growth):
+    """可视化销售数据"""
+    # 1. 销售趋势图
+    plt.figure(figsize=(12, 6))
+    plt.plot(df["date"], df["sales"], label="每日销售额", alpha=0.7)
+    plt.plot(df["date"], df["rolling_avg"], label="7日移动平均", linewidth=2, color="red")
+    plt.title("销售趋势图")
+    plt.xlabel("日期")
+    plt.ylabel("销售额")
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig("sales_trend.png")
+    
+    # 2. 月度销售额柱状图
+    plt.figure(figsize=(10, 6))
+    monthly_sales.plot(kind="bar")
+    plt.title("月度销售额")
+    plt.xlabel("月份")
+    plt.ylabel("销售额")
+    plt.xticks(ticks=[0, 1, 2], labels=["1月", "2月", "3月"])
+    plt.tight_layout()
+    plt.savefig("monthly_sales.png")
+    
+    # 3. 月度增长率折线图
+    plt.figure(figsize=(10, 6))
+    monthly_growth.plot(kind="line", marker="o")
+    plt.title("月度增长率")
+    plt.xlabel("月份")
+    plt.ylabel("增长率 (%)")
+    plt.xticks(ticks=[1, 2], labels=["2月", "3月"])
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+    plt.savefig("monthly_growth.png")
+    
+    print("\n数据可视化完成，图表已保存到本地。")
+
+# 4. 使用AI生成分析报告
+def generate_ai_report(monthly_sales, daily_avg, monthly_growth):
+    """使用AI生成分析报告"""
+    url = "https://api.openai.com/v1/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer YOUR_API_KEY"  # 替换为你的API密钥
+    }
+    
+    # 准备数据摘要
+    data_summary = f""
+    2026年第一季度销售数据摘要：
+    1月销售额: ¥{monthly_sales[1]:,}
+    2月销售额: ¥{monthly_sales[2]:,}
+    3月销售额: ¥{monthly_sales[3]:,}
+    日均销售额: ¥{daily_avg:.2f}
+    2月增长率: {monthly_growth[2]:.2f}%
+    3月增长率: {monthly_growth[3]:.2f}%
+    整体趋势: 销售额呈现持续增长态势，3月达到季度峰值。
+    """
+    
+    # 构建prompt
+    prompt = f"""
+    你是一位专业的商业分析师，请基于以下销售数据摘要，生成一份详细的季度销售分析报告。
+    报告应包括：
+    1. 执行摘要
+    2. 销售数据分析（包括趋势分析、月度对比）
+    3. 关键发现
+    4. 业务建议
+    5. 未来展望
+    
+    数据摘要：
+    {data_summary}
+    
+    请以专业、清晰的商业报告格式输出，语言为中文。
+    """
+    
+    data = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {"role": "system", "content": "你是一位专业的商业分析师，擅长生成详细的销售分析报告。"},
+            {"role": "user", "content": prompt}
+        ],
+        "max_tokens": 2000
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        report = result['choices'][0]['message']['content']
+        
+        # 保存报告
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_filename = f"sales_report_{timestamp}.md"
+        with open(report_filename, "w", encoding="utf-8") as f:
+            f.write(report)
+        
+        print(f"\nAI生成的销售分析报告已保存为: {report_filename}")
+        return report
+    except Exception as e:
+        print(f"API调用失败: {e}")
+        return "无法生成报告"
+
+# 5. 生成数据驱动的业务建议
+def generate_business_recommendations(df):
+    """生成业务建议"""
+    print("\n=== 数据驱动的业务建议 ===")
+    
+    # 分析销售趋势
+    last_month_sales = df[df["month"] == 3]["sales"]
+    avg_last_month = last_month_sales.mean()
+    max_last_month = last_month_sales.max()
+    min_last_month = last_month_sales.min()
+    
+    # 生成建议
+    recommendations = [
+        f"1. 基于3月销售表现，建议增加库存水平以应对持续增长的需求，特别是在月底销售高峰期。",
+        f"2. 日均销售额达到¥{avg_last_month:.2f}，建议制定月度销售目标为¥{avg_last_month * 30:.0f}。",
+        f"3. 销售呈现明显的增长趋势，建议加大营销投入，特别是在月初和月中时段。",
+        f"4. 考虑推出季节性促销活动，以维持销售增长 momentum。",
+        f"5. 分析高销售日的营销策略，复制成功经验到其他日期。"
+    ]
+    
+    for recommendation in recommendations:
+        print(recommendation)
+    
+    return recommendations
+
+# 主函数
+def main():
+    # 加载数据
+    sales_df = load_sales_data()
+    
+    # 分析数据
+    sales_df, monthly_sales, daily_avg, monthly_growth = analyze_sales_data(sales_df)
+    
+    # 可视化数据
+    visualize_sales_data(sales_df, monthly_sales, monthly_growth)
+    
+    # 生成AI分析报告
+    report = generate_ai_report(monthly_sales, daily_avg, monthly_growth)
+    print("\nAI生成的报告摘要:")
+    print(report[:500] + "...")  # 显示报告前500字
+    
+    # 生成业务建议
+    recommendations = generate_business_recommendations(sales_df)
+
+if __name__ == "__main__":
+    main()
+
+# 项目学习要点：
+# 1. 学习如何使用AI工具辅助生成商业报告
+# 2. 掌握数据驱动的业务分析方法
+# 3. 理解如何从销售数据中提取有价值的洞察
+# 4. 学习如何基于数据生成具体的业务建议
+# 5. 掌握完整的商业分析流程：数据收集→分析→可视化→报告生成
+</code></pre>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -475,6 +1911,23 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        // 切换代码显示/隐藏
+        function toggleCode(id) {
+            const codeElement = document.getElementById(id);
+            const toggleIcon = document.querySelector(`[onclick="toggleCode('${id}')"] .code-toggle`);
+            if (codeElement.style.display === 'none') {
+                codeElement.style.display = 'block';
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+            } else {
+                codeElement.style.display = 'none';
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
 
     <!-- 代码运行器组件 -->
     <div id="code-runner" class="code-runner">

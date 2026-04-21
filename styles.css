@@ -1048,6 +1048,43 @@ footer {
     overflow-y: auto;
 }
 
+/* 代码块样式 */
+.lesson-code {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 20px;
+    padding: 15px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.lesson-code pre {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+}
+
+.lesson-code code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* 代码切换按钮样式 */
+.code-toggle {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: #4361ee;
+}
+
 /* 响应式设计 - 代码运行器 */
 @media (max-width: 576px) {
     .code-runner {
@@ -1058,5 +1095,15 @@ footer {
     
     .code-runner-editor .CodeMirror {
         height: 200px;
+    }
+    
+    .lesson-code {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+    
+    .lesson-code pre {
+        font-size: 12px;
     }
 }
