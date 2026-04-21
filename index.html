@@ -3,9 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - 在线课程学习平台</title>
+    <title>王雯淇 - 个人主页</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 个人主页自定义样式 */
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            color: #4361ee;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e9ecef 100%);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hobby-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .hobby-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hobby-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #4361ee;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+        
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background-color: #f8f9fa;
+            color: #4361ee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #4361ee;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background-color: #f8f9fa;
+            padding: 60px 0 30px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -13,20 +178,15 @@
         <nav class="navbar">
             <div class="container">
                 <a href="#" class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>EduLearn</span>
+                    <i class="fas fa-user"></i>
+                    <span>王雯淇</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#">首页</a></li>
-                    <li><a href="#courses">课程</a></li>
-                    <li><a href="#features">特色</a></li>
-                    <li><a href="#testimonials">评价</a></li>
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#hobbies">兴趣爱好</a></li>
+                    <li><a href="#contact">联系方式</a></li>
                 </ul>
-                <div class="auth-buttons">
-                    <a href="#" class="btn btn-outline">登录</a>
-                    <a href="#" class="btn btn-primary">注册</a>
-                </div>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -38,278 +198,92 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>探索知识的无限可能</h1>
-                <p>通过我们精心设计的在线课程，开启你的学习之旅，掌握未来所需的技能</p>
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20woman%20portrait%20smiling%20casual%20style&image_size=square" alt="王雯淇" class="avatar">
+                <h1>你好，我是王雯淇</h1>
+                <p>广东科学技术职业学院 · 商务数据分析与应用专业</p>
                 <div class="hero-buttons">
-                    <a href="#courses" class="btn btn-primary">浏览课程</a>
-                    <a href="#" class="btn btn-outline">了解更多</a>
+                    <a href="#about" class="btn btn-primary">了解更多</a>
+                    <a href="#contact" class="btn btn-outline">联系我</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=online%20learning%20platform%20with%20students%20studying%20on%20laptops%20in%20a%20modern%20classroom%20setting&image_size=landscape_16_9" alt="在线学习">
             </div>
         </div>
     </section>
 
-    <!-- 课程分类 -->
-    <section id="courses" class="courses-section">
+    <!-- 关于我 -->
+    <section id="about" class="about-section">
         <div class="container">
             <div class="section-header">
-                <h2>热门课程分类</h2>
-                <p>选择适合你的学习领域，开启专业技能提升之旅</p>
+                <h2>关于我</h2>
+                <p>认识一下真实的我</p>
             </div>
-            <div class="course-categories">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>编程开发</h3>
-                    <p>从基础到高级的编程技能，包括前端、后端、移动开发等</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>个人简介</h3>
+                    <p>我叫王雯淇，是广东科学技术职业学院商务数据分析与应用专业的一名大学生。我性格开朗，热爱生活，喜欢尝试新事物。</p>
+                    <p>在专业学习方面，我对数据分析和商业决策有着浓厚的兴趣，希望将来能够运用所学知识为企业的发展提供数据支持。</p>
+                    <p>我相信数据是现代商业决策的重要依据，通过分析数据可以发现商业机会，优化业务流程，提高运营效率。</p>
                 </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>商业管理</h3>
-                    <p>提升你的商业洞察力和管理能力，包括市场营销、财务管理等</p>
+                <div class="about-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20woman%20student%20studying%20in%20campus&image_size=landscape_16_9" alt="学习生活" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%;">
                 </div>
-                <a href="python-course.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-python"></i>
-                    </div>
-                    <h3>Python课程</h3>
-                    <p>从基础到进阶的Python编程技能，包括数据分析、Web开发等</p>
-                </a>
-                <a href="ecommerce-course.html" class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>电子商务</h3>
-                    <p>学习电商平台运营、网络营销、客户服务等核心技能</p>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- 精选课程 -->
-    <section class="featured-courses">
+    <!-- 兴趣爱好 -->
+    <section id="hobbies" class="hobby-section">
         <div class="container">
             <div class="section-header">
-                <h2>精选课程</h2>
-                <p>由行业专家精心打造的优质课程</p>
+                <h2>兴趣爱好</h2>
+                <p>我的课余生活</p>
             </div>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=web%20development%20course%20with%20code%20on%20screen&image_size=square" alt="Web开发课程">
-                        <div class="course-badge">热门</div>
+            <div class="hobby-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-badminton"></i>
                     </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span class="course-category">编程开发</span>
-                            <span class="course-rating">
-                                <i class="fas fa-star"></i> 4.9
-                            </span>
-                        </div>
-                        <h3>现代Web开发全栈工程师</h3>
-                        <p>从HTML/CSS基础到React、Node.js，全面掌握现代Web开发技能</p>
-                        <div class="course-footer">
-                            <span class="course-price">¥299</span>
-                            <a href="#" class="btn btn-sm btn-primary">查看详情</a>
-                        </div>
-                    </div>
+                    <h3>打羽毛球</h3>
+                    <p>羽毛球是我最喜欢的运动，它不仅能锻炼身体，还能培养团队合作精神。</p>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=python%20programming%20course%20for%20beginners&image_size=square" alt="Python基础课程">
-                        <div class="course-badge">新课</div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span class="course-category">Python课程</span>
-                            <span class="course-rating">
-                                <i class="fas fa-star"></i> 4.9
-                            </span>
-                        </div>
-                        <h3>Python基础课程</h3>
-                        <p>从零开始学习Python编程语言，掌握编程基础概念和实践技能</p>
-                        <div class="course-footer">
-                            <span class="course-price">¥249</span>
-                            <a href="python-course.html" class="btn btn-sm btn-primary">查看详情</a>
-                        </div>
-                    </div>
+                    <h3>唱歌</h3>
+                    <p>唱歌是我放松心情的方式，无论是流行歌曲还是经典老歌，我都喜欢尝试。</p>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ecommerce%20basics%20course%20with%20online%20shopping&image_size=square" alt="电子商务基础课程">
-                        <div class="course-badge">新课</div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-tv"></i>
                     </div>
-                    <div class="course-content">
-                        <div class="course-meta">
-                            <span class="course-category">电子商务</span>
-                            <span class="course-rating">
-                                <i class="fas fa-star"></i> 4.8
-                            </span>
-                        </div>
-                        <h3>电子商务基础课程</h3>
-                        <p>从零开始学习电子商务基础知识，掌握电商平台运营、网络营销等核心技能</p>
-                        <div class="course-footer">
-                            <span class="course-price">¥299</span>
-                            <a href="ecommerce-course.html" class="btn btn-sm btn-primary">查看详情</a>
-                        </div>
+                    <h3>看电视剧</h3>
+                    <p>我喜欢看各种类型的电视剧，从中可以了解不同的文化和故事。</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-headphones"></i>
                     </div>
+                    <h3>听音乐</h3>
+                    <p>音乐是我生活中不可或缺的一部分，不同的音乐能带给我不同的感受。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 平台特色 -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>为什么选择我们</h2>
-                <p>我们提供高质量的学习体验和丰富的学习资源</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>专业讲师</h3>
-                    <p>由行业专家和资深教育者组成的讲师团队，提供专业、实用的知识</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>灵活学习</h3>
-                    <p>随时随地学习，根据自己的节奏和时间安排，实现高效学习</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>认证证书</h3>
-                    <p>完成课程后获得专业认证证书，提升个人竞争力和职业发展</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>互动学习</h3>
-                    <p>通过讨论、作业和项目实践，增强学习效果和知识应用能力</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 学生评价 -->
-    <section id="testimonials" class="testimonials-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>学生评价</h2>
-                <p>听听我们的学生怎么说</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"通过EduLearn的Web开发课程，我从零基础开始，现在已经能够独立开发网站了。课程内容丰富，讲师讲解清晰，非常推荐！"</p>
-                    <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20male%20student%20portrait&image_size=square" alt="学生头像">
-                        <div class="author-info">
-                            <h4>李明</h4>
-                            <p>Web开发工程师</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>"UI/UX设计课程非常实用，老师会分享很多实际项目经验，让我对设计有了更深入的理解。课程作业也很有挑战性，帮助我快速提升技能。"</p>
-                    <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20female%20student%20portrait&image_size=square" alt="学生头像">
-                        <div class="author-info">
-                            <h4>王芳</h4>
-                            <p>UI设计师</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Python数据分析课程内容全面，从基础到进阶都有覆盖。通过课程学习，我掌握了数据分析的核心技能，现在工作中能够更加高效地处理数据。"</p>
-                    <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20male%20data%20analyst%20portrait&image_size=square" alt="学生头像">
-                        <div class="author-info">
-                            <h4>张伟</h4>
-                            <p>数据分析师</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
+    <!-- 联系方式 -->
     <section id="contact" class="contact-section">
         <div class="container">
+            <div class="section-header">
+                <h2>联系方式</h2>
+                <p>如果你想了解更多，可以通过以下方式联系我</p>
+            </div>
             <div class="contact-content">
-                <div class="contact-info">
-                    <h2>联系我们</h2>
-                    <p>有任何问题或建议，欢迎随时联系我们</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>北京市海淀区中关村大街1号</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>400-123-4567</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contact@edulearn.com</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-weixin"></i></a>
-                        <a href="#"><i class="fab fa-weibo"></i></a>
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>发送消息</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">邮箱</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">消息</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">发送</button>
-                    </form>
+                <p>欢迎关注我的社交媒体，或者给我发送邮件，我会尽快回复你。</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-qq"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -321,44 +295,23 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <a href="#">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>EduLearn</span>
+                        <i class="fas fa-user"></i>
+                        <span>王雯淇</span>
                     </a>
-                    <p>致力于提供高质量的在线教育资源，帮助每个人实现学习目标</p>
+                    <p>广东科学技术职业学院 · 商务数据分析与应用专业</p>
                 </div>
                 <div class="footer-links">
                     <h4>快速链接</h4>
                     <ul>
                         <li><a href="#">首页</a></li>
-                        <li><a href="#courses">课程</a></li>
-                        <li><a href="#features">特色</a></li>
-                        <li><a href="#testimonials">评价</a></li>
-                        <li><a href="#contact">联系我们</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>课程分类</h4>
-                    <ul>
-                        <li><a href="#">编程开发</a></li>
-                        <li><a href="#">商业管理</a></li>
-                        <li><a href="#">设计创意</a></li>
-                        <li><a href="#">语言学习</a></li>
-                        <li><a href="python-course.html">Python课程</a></li>
-                        <li><a href="ecommerce-course.html">电子商务</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>支持</h4>
-                    <ul>
-                        <li><a href="#">帮助中心</a></li>
-                        <li><a href="#">常见问题</a></li>
-                        <li><a href="#">隐私政策</a></li>
-                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#about">关于我</a></li>
+                        <li><a href="#hobbies">兴趣爱好</a></li>
+                        <li><a href="#contact">联系方式</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EduLearn. 保留所有权利。</p>
+                <p>&copy; 2026 王雯淇. 保留所有权利。</p>
             </div>
         </div>
     </footer>
