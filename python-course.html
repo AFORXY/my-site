@@ -485,18 +485,71 @@
         </div>
         <div id="code-runner-content" class="code-runner-content">
             <div class="code-runner-editor">
-                <textarea id="code-editor"># 在此输入Python代码
-print("Hello, Python!")
+                <textarea id="code-editor"># 商务数据分析示例代码
 
-# 尝试一些数据结构
-fruits = ["apple", "banana", "cherry"]
-print("水果列表:", fruits)
+# 示例1: 基本数据结构与操作
+print("=== 基本数据结构 ===")
+# 销售数据 - 模拟电商平台销售记录
+sales_data = [
+    {"product": "商品A", "price": 199, "quantity": 15, "category": "电子产品"},
+    {"product": "商品B", "price": 89, "quantity": 25, "category": "家居用品"},
+    {"product": "商品C", "price": 299, "quantity": 10, "category": "电子产品"},
+    {"product": "商品D", "price": 49, "quantity": 50, "category": "日用品"}
+]
 
-# 简单的数据分析示例
-sales = [120, 150, 180, 210, 240]
-average_sales = sum(sales) / len(sales)
-print("平均销售额:", average_sales)
-</textarea>
+# 计算总销售额
+total_sales = sum(item["price"] * item["quantity"] for item in sales_data)
+print(f"总销售额: ¥{total_sales}")
+
+# 示例2: 使用Pandas进行数据分析
+print("\n=== Pandas数据分析 ===")
+import pandas as pd
+
+# 创建DataFrame
+df = pd.DataFrame(sales_data)
+# 计算每个商品的销售金额
+df["total"] = df["price"] * df["quantity"]
+# 按类别分组计算销售总额
+category_sales = df.groupby("category")["total"].sum()
+print("按类别销售总额:")
+print(category_sales)
+
+# 示例3: 简单的数据可视化
+print("\n=== 数据可视化 ===")
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 模拟月度销售数据
+months = ["1月", "2月", "3月", "4月", "5月", "6月"]
+sales = [12000, 15000, 18000, 16000, 21000, 24000]
+
+# 创建折线图
+plt.figure(figsize=(10, 6))
+plt.plot(months, sales, marker='o', linestyle='-', color='b')
+plt.title('月度销售趋势')
+plt.xlabel('月份')
+plt.ylabel('销售额')
+plt.grid(True)
+plt.show()
+
+# 示例4: 客户行为分析
+print("\n=== 客户行为分析 ===")
+# 模拟客户购买数据
+customer_data = {
+    "customer_id": [101, 102, 103, 104, 105],
+    "age": [25, 32, 41, 28, 35],
+    "gender": ["女", "男", "男", "女", "女"],
+    "purchase_amount": [899, 1299, 599, 1999, 799],
+    "purchase_frequency": [3, 5, 2, 4, 3]
+}
+
+# 创建客户数据DataFrame
+customer_df = pd.DataFrame(customer_data)
+# 计算客户价值（购买金额 * 购买频率）
+customer_df["customer_value"] = customer_df["purchase_amount"] * customer_df["purchase_frequency"]
+print("客户价值分析:")
+print(customer_df.sort_values(by="customer_value", ascending=False))
+
             </div>
             <div class="code-runner-controls">
                 <button id="run-code" class="btn btn-primary">运行代码</button>
@@ -521,17 +574,70 @@ print("平均销售额:", average_sales)
         initPyodide();
 
         // 存储初始示例代码
-        const initialCode = `# 在此输入Python代码
-print("Hello, Python!")
+        const initialCode = `# 商务数据分析示例代码
 
-# 尝试一些数据结构
-fruits = ["apple", "banana", "cherry"]
-print("水果列表:", fruits)
+# 示例1: 基本数据结构与操作
+print("=== 基本数据结构 ===")
+# 销售数据 - 模拟电商平台销售记录
+sales_data = [
+    {"product": "商品A", "price": 199, "quantity": 15, "category": "电子产品"},
+    {"product": "商品B", "price": 89, "quantity": 25, "category": "家居用品"},
+    {"product": "商品C", "price": 299, "quantity": 10, "category": "电子产品"},
+    {"product": "商品D", "price": 49, "quantity": 50, "category": "日用品"}
+]
 
-# 简单的数据分析示例
-sales = [120, 150, 180, 210, 240]
-average_sales = sum(sales) / len(sales)
-print("平均销售额:", average_sales)
+# 计算总销售额
+total_sales = sum(item["price"] * item["quantity"] for item in sales_data)
+print(f"总销售额: ¥{total_sales}")
+
+# 示例2: 使用Pandas进行数据分析
+print("\n=== Pandas数据分析 ===")
+import pandas as pd
+
+# 创建DataFrame
+df = pd.DataFrame(sales_data)
+# 计算每个商品的销售金额
+df["total"] = df["price"] * df["quantity"]
+# 按类别分组计算销售总额
+category_sales = df.groupby("category")["total"].sum()
+print("按类别销售总额:")
+print(category_sales)
+
+# 示例3: 简单的数据可视化
+print("\n=== 数据可视化 ===")
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 模拟月度销售数据
+months = ["1月", "2月", "3月", "4月", "5月", "6月"]
+sales = [12000, 15000, 18000, 16000, 21000, 24000]
+
+# 创建折线图
+plt.figure(figsize=(10, 6))
+plt.plot(months, sales, marker='o', linestyle='-', color='b')
+plt.title('月度销售趋势')
+plt.xlabel('月份')
+plt.ylabel('销售额')
+plt.grid(True)
+plt.show()
+
+# 示例4: 客户行为分析
+print("\n=== 客户行为分析 ===")
+# 模拟客户购买数据
+customer_data = {
+    "customer_id": [101, 102, 103, 104, 105],
+    "age": [25, 32, 41, 28, 35],
+    "gender": ["女", "男", "男", "女", "女"],
+    "purchase_amount": [899, 1299, 599, 1999, 799],
+    "purchase_frequency": [3, 5, 2, 4, 3]
+}
+
+# 创建客户数据DataFrame
+customer_df = pd.DataFrame(customer_data)
+# 计算客户价值（购买金额 * 购买频率）
+customer_df["customer_value"] = customer_df["purchase_amount"] * customer_df["purchase_frequency"]
+print("客户价值分析:")
+print(customer_df.sort_values(by="customer_value", ascending=False))
 `;
 
         // 初始化CodeMirror
