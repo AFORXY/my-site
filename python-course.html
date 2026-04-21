@@ -6,6 +6,11 @@
     <title>Python基础课程 - EduLearn</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -56,7 +61,7 @@
                         </span>
                     </div>
                     <p class="course-description">
-                        从零开始学习Python编程语言，掌握编程基础概念和实践技能，为后续的数据分析、Web开发等领域打下坚实基础。
+                        在AI编程工具（如GitHub Copilot、ChatGPT等）逐渐成熟的2026年，学习Python的逻辑已经发生了根本性转变：从"逐行手写所有代码"转向"读懂核心逻辑+AI协作生成+业务落地"。作为商务数据分析与应用专业的学生，你的目标不是成为底层算法开发者，而是用Python解决商业数据问题。本课程采用极简、务实且顺应AI时代的学习框架，帮助你快速掌握Python核心技能。
                     </p>
                     <div class="course-actions">
                         <a href="#" class="btn btn-primary">立即报名</a>
@@ -75,134 +80,40 @@
         <div class="container">
             <div class="section-header">
                 <h2>课程大纲</h2>
-                <p>系统学习Python编程的核心概念和实践技能</p>
+                <p>AI时代的Python极简学习框架</p>
             </div>
             <div class="syllabus-content">
                 <div class="syllabus-section">
                     <div class="syllabus-section-header">
-                        <h3>第1章：Python入门</h3>
+                        <h3>第1章：极简核心语法 - AI无法替代的"骨架"</h3>
                         <span class="section-duration">2小时</span>
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>1.1 Python简介</span>
-                            </div>
-                            <span class="lesson-duration">15分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>1.2 安装Python环境</span>
-                            </div>
-                            <span class="lesson-duration">20分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>1.3 第一个Python程序</span>
-                            </div>
-                            <span class="lesson-duration">25分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>1.4 Python基础语法</span>
-                            </div>
-                            <span class="lesson-duration">20分钟</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="syllabus-section">
-                    <div class="syllabus-section-header">
-                        <h3>第2章：数据类型与操作</h3>
-                        <span class="section-duration">3小时</span>
-                    </div>
-                    <ul class="syllabus-lessons">
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>2.1 基本数据类型</span>
+                                <span>1.1 基础语法与控制流</span>
                             </div>
                             <span class="lesson-duration">30分钟</span>
                         </li>
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>2.2 字符串操作</span>
-                            </div>
-                            <span class="lesson-duration">35分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>2.3 列表与元组</span>
+                                <span>1.2 核心数据结构：列表与字典</span>
                             </div>
                             <span class="lesson-duration">40分钟</span>
                         </li>
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>2.4 字典与集合</span>
-                            </div>
-                            <span class="lesson-duration">35分钟</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="syllabus-section">
-                    <div class="syllabus-section-header">
-                        <h3>第3章：控制流</h3>
-                        <span class="section-duration">2.5小时</span>
-                    </div>
-                    <ul class="syllabus-lessons">
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>3.1 条件语句</span>
+                                <span>1.3 函数与模块调用</span>
                             </div>
                             <span class="lesson-duration">25分钟</span>
                         </li>
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>3.2 循环语句</span>
-                            </div>
-                            <span class="lesson-duration">35分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>3.3 循环控制</span>
-                            </div>
-                            <span class="lesson-duration">20分钟</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="syllabus-section">
-                    <div class="syllabus-section-header">
-                        <h3>第4章：函数与模块</h3>
-                        <span class="section-duration">2小时</span>
-                    </div>
-                    <ul class="syllabus-lessons">
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>4.1 函数定义与调用</span>
-                            </div>
-                            <span class="lesson-duration">30分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>4.2 函数参数</span>
-                            </div>
-                            <span class="lesson-duration">25分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>4.3 模块与包</span>
+                                <span>1.4 文件操作与异常处理</span>
                             </div>
                             <span class="lesson-duration">25分钟</span>
                         </li>
@@ -210,52 +121,124 @@
                 </div>
                 <div class="syllabus-section">
                     <div class="syllabus-section-header">
-                        <h3>第5章：文件操作与异常处理</h3>
-                        <span class="section-duration">1.5小时</span>
-                    </div>
-                    <ul class="syllabus-lessons">
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>5.1 文件读写</span>
-                            </div>
-                            <span class="lesson-duration">30分钟</span>
-                        </li>
-                        <li>
-                            <div class="lesson-info">
-                                <i class="fas fa-play-circle"></i>
-                                <span>5.2 异常处理</span>
-                            </div>
-                            <span class="lesson-duration">30分钟</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="syllabus-section">
-                    <div class="syllabus-section-header">
-                        <h3>第6章：项目实战</h3>
+                        <h3>第2章：数据分析核心库 - 直接对接专业应用</h3>
                         <span class="section-duration">3小时</span>
                     </div>
                     <ul class="syllabus-lessons">
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>6.1 猜数字游戏</span>
+                                <span>2.1 Pandas基础：DataFrame操作</span>
+                            </div>
+                            <span class="lesson-duration">60分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>2.2 数据清洗与预处理</span>
                             </div>
                             <span class="lesson-duration">45分钟</span>
                         </li>
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>6.2 简易计算器</span>
+                                <span>2.3 数据聚合与分析</span>
                             </div>
-                            <span class="lesson-duration">50分钟</span>
+                            <span class="lesson-duration">30分钟</span>
                         </li>
                         <li>
                             <div class="lesson-info">
                                 <i class="fas fa-play-circle"></i>
-                                <span>6.3 学生管理系统</span>
+                                <span>2.4 数据可视化：Matplotlib/Seaborn</span>
                             </div>
                             <span class="lesson-duration">45分钟</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="syllabus-section">
+                    <div class="syllabus-section-header">
+                        <h3>第3章：AI时代的新基础 - 大模型应用与协作能力</h3>
+                        <span class="section-duration">2.5小时</span>
+                    </div>
+                    <ul class="syllabus-lessons">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>3.1 大模型API调用</span>
+                            </div>
+                            <span class="lesson-duration">45分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>3.2 LangChain框架初步</span>
+                            </div>
+                            <span class="lesson-duration">45分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>3.3 Prompt驱动的代码修改</span>
+                            </div>
+                            <span class="lesson-duration">30分钟</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="syllabus-section">
+                    <div class="syllabus-section-header">
+                        <h3>第4章：拒绝时间浪费的高效学习法</h3>
+                        <span class="section-duration">1.5小时</span>
+                    </div>
+                    <ul class="syllabus-lessons">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>4.1 案例优先，实践为王</span>
+                            </div>
+                            <span class="lesson-duration">30分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>4.2 利用可视化工具破除玄学</span>
+                            </div>
+                            <span class="lesson-duration">30分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>4.3 目标除障法：快速定位和解决Bug</span>
+                            </div>
+                            <span class="lesson-duration">30分钟</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="syllabus-section">
+                    <div class="syllabus-section-header">
+                        <h3>第5章：商务数据分析实战项目</h3>
+                        <span class="section-duration">3小时</span>
+                    </div>
+                    <ul class="syllabus-lessons">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>5.1 电商销售数据分析</span>
+                            </div>
+                            <span class="lesson-duration">60分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>5.2 客户行为分析与 segmentation</span>
+                            </div>
+                            <span class="lesson-duration">60分钟</span>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-play-circle"></i>
+                                <span>5.3 AI辅助的商业报告生成</span>
+                            </div>
+                            <span class="lesson-duration">60分钟</span>
                         </li>
                     </ul>
                 </div>
@@ -268,50 +251,50 @@
         <div class="container">
             <div class="section-header">
                 <h2>课程特色</h2>
-                <p>为什么选择我们的Python基础课程</p>
+                <p>AI时代的Python学习新范式</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>实战导向</h3>
-                    <p>通过大量实例和项目实践，帮助你快速掌握Python编程技能</p>
+                    <h3>AI协作学习</h3>
+                    <p>掌握与AI工具（GitHub Copilot、ChatGPT等）协作的核心技能，顺应2026年编程新趋势</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>专业讲师</h3>
-                    <p>由资深Python开发工程师授课，讲解清晰易懂</p>
+                    <h3>商务数据导向</h3>
+                    <p>专注于商业数据分析应用，80%时间投入Pandas等核心库，直接对接企业实际需求</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-laptop"></i>
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>灵活学习</h3>
-                    <p>随时随地学习，根据自己的节奏安排学习时间</p>
+                    <h3>极速通关</h3>
+                    <p>采用极简学习框架，只学AI无法替代的核心技能，最短时间掌握实用Python能力</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3>认证证书</h3>
-                    <p>完成课程后获得专业认证证书，提升个人竞争力</p>
+                    <h3>业务洞察培养</h3>
+                    <p>把记忆语法的精力省下来，培养"业务洞察力"和"AI工具驾驭力"，打造核心竞争力</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3>互动学习</h3>
-                    <p>通过讨论和作业，增强学习效果和知识应用能力</p>
+                    <h3>案例驱动学习</h3>
+                    <p>从实际商务数据分析案例入手，在解决问题中掌握语法，避免低效的理论学习</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-cloud"></i>
                     </div>
-                    <h3>技术支持</h3>
-                    <p>提供24/7技术支持，解决学习过程中的问题</p>
+                    <h3>大模型应用</h3>
+                    <p>学习如何用Python连接和驾驭AI，实现批量文本分析、智能摘要等商业应用</p>
                 </div>
             </div>
         </div>
@@ -322,7 +305,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>学生评价</h2>
-                <p>听听学习过本课程的学生怎么说</p>
+                <p>听听商务数据分析专业学生的真实反馈</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -333,12 +316,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"这门Python基础课程非常适合初学者，老师讲解清晰，内容安排合理，通过实战项目让我快速掌握了Python编程技能。现在我已经能够独立编写简单的Python程序了。"</p>
+                    <p>"这门课程完全颠覆了我对Python学习的认知！老师没有让我们死记语法，而是教我们如何与AI工具协作，快速解决商务数据分析问题。现在我能用Pandas处理大量销售数据，还能通过AI生成分析报告，效率提升了不止一倍。"</p>
                     <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20student%20portrait%20smiling&image_size=square" alt="学生头像">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20business%20student%20portrait%20smiling&image_size=square" alt="学生头像">
                         <div class="author-info">
-                            <h4>张三</h4>
-                            <p>计算机专业学生</p>
+                            <h4>李明</h4>
+                            <p>商务数据分析专业学生</p>
                         </div>
                     </div>
                 </div>
@@ -350,12 +333,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>"作为一名转行者，这门课程帮助我快速入门Python编程。课程内容从基础到进阶，循序渐进，老师的讲解非常耐心，课后作业也很有针对性。"</p>
+                    <p>"作为商务数据分析专业的学生，我最担心的就是学了一堆无用的语法。这门课程的AI时代学习框架非常实用，直接从Pandas和实际案例入手，让我快速掌握了数据处理能力。现在我已经能独立完成客户行为分析项目了。"</p>
                     <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20woman%20portrait%20confident&image_size=square" alt="学生头像">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20female%20data%20analyst%20portrait%20confident&image_size=square" alt="学生头像">
                         <div class="author-info">
-                            <h4>李四</h4>
-                            <p>市场专员</p>
+                            <h4>张芳</h4>
+                            <p>商务数据分析专业学生</p>
                         </div>
                     </div>
                 </div>
@@ -367,12 +350,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"课程内容全面，涵盖了Python的核心概念和实践技能。通过学习这门课程，我不仅掌握了Python编程基础，还学会了如何应用Python解决实际问题。"</p>
+                    <p>"课程中的大模型API调用部分让我大开眼界！我学会了如何用Python连接GPT进行情感分析，这在分析客户反馈时非常有用。现在我不再害怕写代码，而是学会了与AI协作，让它帮我生成基础代码，我负责业务逻辑和数据解读。"</p>
                     <div class="testimonial-author">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20professional%20male%20portrait&image_size=square" alt="学生头像">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20asian%20business%20analyst%20portrait%20enthusiastic&image_size=square" alt="学生头像">
                         <div class="author-info">
-                            <h4>王五</h4>
-                            <p>数据分析师</p>
+                            <h4>王强</h4>
+                            <p>商务数据分析专业学生</p>
                         </div>
                     </div>
                 </div>
@@ -385,7 +368,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>常见问题</h2>
-                <p>解答你可能有的疑问</p>
+                <p>解答你关于AI时代Python学习的疑问</p>
             </div>
             <div class="faq-content">
                 <div class="faq-item">
@@ -394,7 +377,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>是的，这门课程专门为零基础学员设计，从Python的基本概念开始，循序渐进地讲解，帮助你逐步掌握Python编程技能。</p>
+                        <p>是的，这门课程专门为商务数据分析专业的零基础学员设计。我们采用AI时代的极简学习框架，从实用角度出发，跳过繁琐的语法细节，直接学习与业务相关的核心技能。</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -403,16 +386,16 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>只需要一台电脑和互联网连接，我们会在课程中详细讲解如何安装和配置Python环境。</p>
+                        <p>只需要一台电脑和互联网连接。我们会在课程中详细讲解如何安装和配置Python环境，以及如何使用GitHub Copilot、ChatGPT等AI工具辅助学习。</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>课程有效期是多久？</h3>
+                        <h3>为什么课程重点强调AI协作？</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>一旦报名，你将终身拥有课程的访问权限，可以随时复习和学习。</p>
+                        <p>在2026年，AI编程工具已经非常成熟，能够帮助我们快速生成代码。作为商务数据分析专业的学生，你的核心竞争力不是手写代码的能力，而是理解业务逻辑、驾驭AI工具、解读数据分析结果的能力。</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -421,7 +404,16 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>完成课程后，你将掌握Python的基本语法和核心概念，能够独立编写简单的Python程序，并为后续学习数据分析、Web开发等高级主题打下基础。</p>
+                        <p>完成课程后，你将能够：1) 掌握Python核心语法骨架和数据结构；2) 熟练使用Pandas进行商务数据分析；3) 与AI工具高效协作生成和修改代码；4) 调用大模型API进行文本分析等商业应用；5) 独立完成电商销售数据分析、客户行为分析等实战项目。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>课程内容如何体现商务数据分析专业特色？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>课程内容完全围绕商务数据分析展开，80%的时间投入到Pandas等核心库的学习，案例全部来自真实商业场景，如电商销售数据分析、客户行为分析、AI辅助商业报告生成等。我们的目标是让你学完就能直接应用到专业学习和未来工作中。</p>
                     </div>
                 </div>
             </div>
@@ -475,5 +467,123 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- 代码运行器组件 -->
+    <div id="code-runner" class="code-runner">
+        <div class="code-runner-header" onclick="toggleCodeRunner()">
+            <i class="fas fa-code"></i>
+            <span>Python代码运行器</span>
+            <i id="code-runner-toggle" class="fas fa-chevron-up"></i>
+        </div>
+        <div id="code-runner-content" class="code-runner-content">
+            <div class="code-runner-editor">
+                <textarea id="code-editor"># 在此输入Python代码
+print("Hello, Python!")
+
+# 尝试一些数据结构
+fruits = ["apple", "banana", "cherry"]
+print("水果列表:", fruits)
+
+# 简单的数据分析示例
+sales = [120, 150, 180, 210, 240]
+average_sales = sum(sales) / len(sales)
+print("平均销售额:", average_sales)
+</textarea>
+            </div>
+            <div class="code-runner-controls">
+                <button id="run-code" class="btn btn-primary">运行代码</button>
+                <button id="reset-code" class="btn btn-outline">重置示例</button>
+                <button id="clear-code" class="btn btn-outline">清空</button>
+            </div>
+            <div class="code-runner-output">
+                <h4>输出结果:</h4>
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化Pyodide
+        let pyodide;
+        async function initPyodide() {
+            pyodide = await loadPyodide({
+                indexURL: "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/"
+            });
+        }
+        initPyodide();
+
+        // 存储初始示例代码
+        const initialCode = `# 在此输入Python代码
+print("Hello, Python!")
+
+# 尝试一些数据结构
+fruits = ["apple", "banana", "cherry"]
+print("水果列表:", fruits)
+
+# 简单的数据分析示例
+sales = [120, 150, 180, 210, 240]
+average_sales = sum(sales) / len(sales)
+print("平均销售额:", average_sales)
+`;
+
+        // 初始化CodeMirror
+        const editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            mode: 'python',
+            theme: 'monokai',
+            lineNumbers: true,
+            indentUnit: 4,
+            tabSize: 4,
+            autofocus: false
+        });
+
+        // 运行代码
+        document.getElementById('run-code').addEventListener('click', async function() {
+            const code = editor.getValue();
+            const outputElement = document.getElementById('output');
+            
+            try {
+                outputElement.textContent = '运行中...';
+                await pyodide.loadPackagesFromPyPI(['pandas', 'numpy', 'matplotlib']);
+                
+                // 重定向stdout
+                pyodide.globals.set('print', (text) => {
+                    outputElement.textContent += text + '\n';
+                });
+                
+                // 运行代码
+                await pyodide.runPythonAsync(code);
+            } catch (error) {
+                outputElement.textContent = '错误: ' + error.message;
+            }
+        });
+
+        // 清空代码
+        document.getElementById('clear-code').addEventListener('click', function() {
+            editor.setValue('');
+            document.getElementById('output').textContent = '';
+        });
+
+        // 重置示例代码
+        document.getElementById('reset-code').addEventListener('click', function() {
+            editor.setValue(initialCode);
+            document.getElementById('output').textContent = '';
+        });
+
+        // 切换代码运行器显示/隐藏
+        function toggleCodeRunner() {
+            const content = document.getElementById('code-runner-content');
+            const toggle = document.getElementById('code-runner-toggle');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.classList.remove('fa-chevron-up');
+                toggle.classList.add('fa-chevron-down');
+            } else {
+                content.style.display = 'none';
+                toggle.classList.remove('fa-chevron-down');
+                toggle.classList.add('fa-chevron-up');
+            }
+        }
+    </script>
 </body>
 </html>

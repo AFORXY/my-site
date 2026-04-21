@@ -970,3 +970,93 @@ footer {
         max-width: 100%;
     }
 }
+
+/* 代码运行器样式 */
+.code-runner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 450px;
+    max-width: 90vw;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.code-runner-header {
+    background-color: #4361ee;
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.code-runner-header i {
+    margin-right: 8px;
+}
+
+.code-runner-content {
+    padding: 16px;
+    display: none;
+}
+
+.code-runner-editor {
+    margin-bottom: 16px;
+}
+
+.code-runner-editor .CodeMirror {
+    height: 300px;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.code-runner-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.code-runner-output {
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.code-runner-output h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.code-runner-output pre {
+    margin: 0;
+    padding: 10px;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* 响应式设计 - 代码运行器 */
+@media (max-width: 576px) {
+    .code-runner {
+        width: 90vw;
+        right: 5vw;
+        left: 5vw;
+    }
+    
+    .code-runner-editor .CodeMirror {
+        height: 200px;
+    }
+}
